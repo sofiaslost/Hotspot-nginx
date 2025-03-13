@@ -8,8 +8,8 @@
 <body>
     <h1>sofiaslost.co.uk Hotspot</h1>
     <?php
-    $localIP = getHostByName(getHostName()); 
-    echo $localIP;
+    $interface_to_detect = 'swlan0';
+    echo explode(' ',explode(':',explode('inet addr',explode($interface_to_detect,trim(`ifconfig`))[1])[1])[1])[0];
     ?>
 </body>
 </html>
