@@ -8,8 +8,8 @@
 <body>
     <h1>sofiaslost.co.uk Hotspot</h1>
     <?php
-    $ip = gethostbyname("10.150.74.24");
-    echo $ip;
+    $localIP = getHostByName(getHostName()); 
+    echo $localIP;
     ?>
 </body>
 </html>
