@@ -14,7 +14,7 @@
 </html>
 
 <?php   
-    function getUserIP() {
+    function getUserIP($echo = true) {
         $ipaddress = '';
         if (isset($_SERVER['HTTP_CLIENT_IP']))
             $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
@@ -32,7 +32,11 @@
             $ipaddress = $_SERVER['REMOTE_ADDR'];
         else
             $ipaddress = 'COULD NOT FIND IP ADDRESS';
-        return $ipaddress;
-        echo $ipaddress;
+        
+        if ($echo) {
+            echo $ipaddress;
+        } else {
+            return $ipaddress;
+        }
     }
 ?>
