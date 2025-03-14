@@ -10,11 +10,9 @@
     <h1>sofiaslost.co.uk Hotspot</h1>
 
     <?php getUserIP(); ?>
-</body>
-</html>
 
-<?php   
-    function getUserIP($echo = true) {
+    <?php   
+    function getUserIP() {
         $ipaddress = '';
         if (isset($_SERVER['HTTP_CLIENT_IP']))
             $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
@@ -32,11 +30,10 @@
             $ipaddress = $_SERVER['REMOTE_ADDR'];
         else
             $ipaddress = 'COULD NOT FIND IP ADDRESS';
-        
-        if ($echo) {
-            echo $ipaddress;
-        } else {
-            return $ipaddress;
-        }
+        return $ipaddress
+
+        echo $ipaddress; 
     }
 ?>
+</body>
+</html>
